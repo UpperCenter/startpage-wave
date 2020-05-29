@@ -1,25 +1,25 @@
 function updateClock() {
+    var date = new Date();
 
-var date = new Date();
+    var hours = date.getHours();
 
-var hours = date.getHours();
+    var minutes = date.getMinutes();
 
-var minutes = date.getMinutes();
+    var seconds = date.getSeconds();
 
-var ampm = hours >= 12 ? 'pm' : 'am';
+    var ampm = hours >= 12 ? "pm" : "am";
 
-hours = hours % 12;
+    hours = hours % 12;
 
-hours = hours ? hours : 12; // the hour '0' should be '12'
+    hours = hours ? hours : 12; // the hour '0' should be '12'
 
-minutes = minutes < 10 ? '0'+minutes : minutes;
+    minutes = minutes < 10 ? "0" + minutes : minutes;
 
-var time = hours + ':' + minutes + ' ' + ampm;
+    var time = hours + ":" + minutes + ":" + seconds + " " + ampm;
 
-document.getElementById('time').innerHTML = time;
+    document.getElementById("time").innerHTML = time;
 
-setTimeout(updateClock, 1000);
-
+    setTimeout(updateClock, 1000);
 }
 
 updateClock();
